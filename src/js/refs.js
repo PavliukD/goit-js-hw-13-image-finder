@@ -1,4 +1,4 @@
-export const refs = {
+export default {
     apiKey: '23472343-684e35cdd5517f1d2662ecb2d',
     BASE_URL: 'https://pixabay.com/api/',
     perPage: '12',

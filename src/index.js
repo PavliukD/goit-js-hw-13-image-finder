@@ -1,4 +1,14 @@
-import { refs } from './js/refs'
+import refs from './js/refs'
+
+const { BASE_URL, apiKey, perPage } = refs
+
+async function apiServise(baseUrl, key, perPage){
+    let url = `${baseUrl}?key=${key}&image_type=photo&orientation=horizontal&per_page=${perPage}&page=1&q=flower`
+    let r = await fetch(`${url}`)
+    let d = await r.json()
+    console.log(d.hits)
+    // return d
+}
 
 
-fetch(`${refs.BASE_URL}?key=${refs.apiKey}&image_type=photo&orientation=horizontal&per_page=${refs.perPage}&page=1&q=flower`).then(r => console.log(r)).then()
+apiServise(BASE_URL, apiKey, perPage)
