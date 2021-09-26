@@ -2,7 +2,7 @@ import refs from './refs'
 
 const { BASE_URL, apiKey, perPage } = refs
 
-export default class APIServise(){
+export class APIServise{
  constructor(input, page){
      this.baseUrl = BASE_URL
      this.key = apiKey
