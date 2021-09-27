@@ -9,10 +9,8 @@ input.addEventListener('submit', onInput)
 
 async function onInput(e){
     e.preventDefault()
-    console.dir(e.target.elements[0].value)
     let query = e.target.elements[0].value
     let data = await apiService(query, 1)
-    console.log(data)
     renderElements(data)
 }
 

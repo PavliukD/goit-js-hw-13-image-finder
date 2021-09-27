@@ -8,7 +8,6 @@ const { BASE_URL, apiKey, perPage } = refs
     let url = `${BASE_URL}?key=${apiKey}&image_type=photo&orientation=horizontal&per_page=${perPage}&page=${page}&q=${query}`
     let r = await fetch(`${url}`)
     let d = await r.json()
-    console.log(d.hits)
     return d.hits
  }
 
