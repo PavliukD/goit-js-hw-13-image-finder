@@ -1,15 +1,21 @@
 import refs from './js/refs'
-import APIServise from './js/apiService'
+import apiService from './js/apiService'
+import imageCards from './templates/image-card.hbs'
 
 const { input, gallery } = refs
-
-console.log(input)
 
 input.addEventListener('submit', onInput)
 
 
-function onInput(e){
+async function onInput(e){
     e.preventDefault()
     console.dir(e.target.elements[0].value)
-    console.log(APIServise.getFetch(e.target.elements[0].value, 1))
+    let query = e.target.elements[0].value
+    let data = await apiService(query, 1)
+    console.log(data)
+    renderElements(data)
+}
+
+function renderElements(data){
+    gallery.insertAdjacentHTML('beforeend', imageCards(data))
 }
