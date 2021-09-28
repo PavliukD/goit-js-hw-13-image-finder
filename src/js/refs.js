@@ -3,5 +3,7 @@ export default {
     BASE_URL: 'https://pixabay.com/api/',
     perPage: '12',
     input: document.querySelector('.search-form'),
-    gallery: document.querySelector('.gallery')
+    gallery: document.querySelector('.gallery'),
+    documentObserver: document.querySelector('.observer'),
+    section: document.querySelector('.section')
 }
