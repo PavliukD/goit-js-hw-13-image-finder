@@ -7,11 +7,10 @@ let page = 1
 let query = ''
 let data =''
 let galleryLastChild = input
-
-
+const options = {}
+const observer = new IntersectionObserver(infinityScroll, options)
 
 input.addEventListener('submit', onInput)
-
 
 async function onInput(e){
     e.preventDefault()
@@ -32,14 +31,7 @@ function renderElements(data){
     gallery.insertAdjacentHTML('beforeend', imageCards(data))
 }
 
-
-    const options = {
-    }
-    const observer = new IntersectionObserver(infinityScroll, options)
-    
- 
-
-    async function infinityScroll(entries, observer){
+async function infinityScroll(entries, observer) {
         if (galleryLastChild !== gallery.lastChild.previousElementSibling){
             return
         }
@@ -51,4 +43,4 @@ function renderElements(data){
         console.log(galleryLastChild)
     }
     
-    observer.observe(galleryLastChild)
+observer.observe(galleryLastChild)
