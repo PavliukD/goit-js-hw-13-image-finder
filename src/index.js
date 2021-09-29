@@ -35,7 +35,8 @@ function renderElements(data){
 
 async function infinityScroll(entries, observer) {
         entries.forEach(element => {
-            if (element.isIntersecting && element.target.firstElementChild.complete){
+            if (element.isIntersecting && element.target.firstElementChild.complete) {
+                observer.unobserve(galleryLastChild)
                 getMoreImages()
             }
             
